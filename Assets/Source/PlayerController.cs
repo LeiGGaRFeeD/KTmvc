@@ -28,19 +28,19 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            playerModel.ChangeHealth(-20); // Пример: уменьшение хп на 20 при столкновении с врагом
+            playerModel.ChangeHealth(-20); 
         }
     }
 
     private void Update()
     {
-        // Логика для изменения хп игрока
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerModel.ChangeHealth(-10); // Пример: уменьшение хп на 10
+            playerModel.ChangeHealth(-10);
         }
 
-        // Логика для перемещения игрока
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 

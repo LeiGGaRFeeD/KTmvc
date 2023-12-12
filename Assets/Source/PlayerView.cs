@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerView : MonoBehaviour
 {
-    public Text healthText = GameObject.FindWithTag("TXT").GetComponent<Text>();
-
+    public Text healthText;
+    public void Start()
+    {
+        healthText = GameObject.Find("Health").GetComponent<Text>();
+    }
     public void UpdateHealthText(int health)
     {
         PlayerPrefs.SetString("_health", "Health: " + health.ToString());
