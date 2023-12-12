@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerView : MonoBehaviour
 {
-    public Text healthText;
+    public Text healthText = GameObject.FindWithTag("TXT").GetComponent<Text>();
 
     public void UpdateHealthText(int health)
     {
@@ -16,6 +16,6 @@ public class PlayerView : MonoBehaviour
 
     public void ShowPlayerDeath()
     {
-        SceneManager.LoadScene("LoseScene");
+        SceneManager.LoadScene("SampleScene");
     }
 }

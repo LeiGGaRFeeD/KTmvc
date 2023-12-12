@@ -14,14 +14,14 @@ public class PlayerModel : MonoBehaviour
         Debug.Log("Script Started");
     }
 
-    public int MaxHealth { get; private set; }
-    public int CurrentHealth { get; private set; }
+    private int MaxHealth { get;  set; }
+    private int CurrentHealth { get;  set; }
 
-    public float speed = 5f; // Скорость перемещения игрока
+    public float speed = 5f; 
 
     private void Awake()
     {
-        MaxHealth = 100; // Установка максимального хп
+        MaxHealth = 100; 
         CurrentHealth = MaxHealth;
     }
 
@@ -40,10 +40,10 @@ public class PlayerModel : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>() == true)
+        if (collision.gameObject.CompareTag("Enemy") == true)
         {
             Debug.Log("Ouch!");
-            ChangeHealth(-20); // Пример: уменьшение хп на 20 при столкновении с врагом
+            ChangeHealth(-20); 
         }
         Debug.Log("Collision Worked!");
     }
